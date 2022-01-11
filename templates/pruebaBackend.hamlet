@@ -11,14 +11,14 @@
           <div .row>
               <div .col-lg-12>
                   <div .page-header>
-                      <h2><a href="https://github.com/cevamenelao">Solucion</a>
+                      <h2><a href="https://github.com/CevaMenelao/pruebaResuelve">Solucion</a>
 
                       <p>
-                          La pagina de solucion de este problema se encuentra en el github
-                          <a>github</a>
-                          en el archivo
-                          <a>src/Pruenas.hs</a>
-                          de la linea 22 a la 220 y el calculo se encuentra en las lineas 162 a 220
+                          La solucion de este problema se encuentra en
+                          <a href="https://github.com/CevaMenelao/pruebaResuelve">github</a>
+                          , en el archivo
+                          <a href="https://github.com/CevaMenelao/pruebaResuelve/blob/master/src/Handler/PruebaBackend.hs">src/PruebaBackend.hs</a>
+                          de la linea 15 a la 211 y el calculo se encuentra en las lineas 156 a 211
               <div .col-lg-4>
                   <p>
                       Estructura de input en un JSON sgun el problema:
@@ -95,8 +95,3 @@
                         <button>Descargar
                       $nothing
                         <p>Sin resultados aun
-<!--                    $maybe (FilesForm info1 info2) <- submission
-                        Your file type is <em>#{fileContentType info1}</em>. You say it has:
-
-                    $nothing
-                        File upload result will be here...-->
