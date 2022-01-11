@@ -1,3 +1,11 @@
+### Prueba Técnica
+1. Prueba tecnica para la vacante de Ingeniero de Software en Resuelve tu Deuda
+2. Pruebas Backend y Frontend
+3. Prueba Backend en [git hub separado sin usar yesod](https://github.com/CevaMenelao/pruebaResuelveSoloBack)
+4. Este proyecto uso Yesod y se dejara el README por default
+5. Usar `yesod devel` para analisis
+6. Entrar desde el buscador a [localhost:3000](http://localhost:3000) si se tienen problemas de autenticacion entrar a [localhost:3443](https://localhost:3443)
+
 ## Haskell Setup
 
 1. If you haven't already, [install Stack](https://haskell-lang.org/get-started)
