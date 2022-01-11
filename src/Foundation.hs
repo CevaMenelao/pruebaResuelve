@@ -31,7 +31,7 @@ import qualified Data.Text.Encoding as TE
 -- starts running, such as database connections. Every handler will have
 -- access to the data present here.
 
-data Environment = Production | Development deriving (Read)
+--data Environment = Production | Development deriving (Read)
 
 data App = App
     { appSettings    :: AppSettings
@@ -39,7 +39,7 @@ data App = App
     , appConnPool    :: ConnectionPool -- ^ Database connection pool.
     , appHttpManager :: Manager
     , appLogger      :: Logger
-    , environment    :: Environment
+    --, environment    :: Environment
     }
 
 data MenuItem = MenuItem

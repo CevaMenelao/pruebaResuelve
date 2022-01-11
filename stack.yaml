@@ -29,9 +29,10 @@ resolver:
 #   subdirs:
 #   - auto-update
 #   - wai
-packages:
--location:
-    git: https://CevaMenelao:{{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}}@github.com/CevaMenelao/pruebaResuelve.git
+#packages:
+#-.
+#location:
+ #   git: https://CevaMenelao:{{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}}@github.com/CevaMenelao/pruebaResuelve.git
 
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
