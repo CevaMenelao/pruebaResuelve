@@ -31,6 +31,7 @@ import Network.Wai.Handler.Warp             (Settings, defaultSettings,
                                              defaultShouldDisplayException,
                                              runSettings, setHost,
                                              setOnException, setPort, getPort)
+import Network.Wai.Middleware.ForceSSL      (forceSSL)
 import Network.Wai.Middleware.RequestLogger (Destination (Logger),
                                              IPAddrSource (..),
                                              OutputFormat (..), destination,
@@ -62,6 +63,8 @@ makeFoundation appSettings = do
     -- subsite.
     appHttpManager <- getGlobalManager
     appLogger <- newStdoutLoggerSet defaultBufSize >>= makeYesodLogger
+    --menv <- readMay <$> getEnv "YESOD_ENVIRONMENT"
+    --let environment = maybe Development id menv -- default to Development
     appStatic <-
         (if appMutableStatic appSettings then staticDevel else static)
         (appStaticDir appSettings)
@@ -94,9 +97,17 @@ makeFoundation appSettings = do
 makeApplication :: App -> IO Application
 makeApplication foundation = do
     logWare <- makeLogWare foundation
+    let sslWare = makeSSLWare foundation
     -- Create the WAI application and apply middlewares
     appPlain <- toWaiAppPlain foundation
-    return $ logWare $ defaultMiddlewaresNoLogging appPlain
+    --return $  logWare $ defaultMiddlewaresNoLogging appPlain
+    return $ forceSSL $ logWare $ defaultMiddlewaresNoLogging appPlain
+    --return $ sslWare $ logWare $ defaultMiddlewaresNoLogging appPlain
+
+makeSSLWare :: App -> Middleware
+makeSSLWare App{..} = case environment of
+                          Production -> forceSSL
+                          Development -> id
 
 makeLogWare :: App -> IO Middleware
 makeLogWare foundation =

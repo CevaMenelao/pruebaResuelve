@@ -30,12 +30,16 @@ import qualified Data.Text.Encoding as TE
 -- keep settings and values requiring initialization before your application
 -- starts running, such as database connections. Every handler will have
 -- access to the data present here.
+
+data Environment = Production | Development deriving (Read)
+
 data App = App
     { appSettings    :: AppSettings
     , appStatic      :: Static -- ^ Settings for static file serving.
     , appConnPool    :: ConnectionPool -- ^ Database connection pool.
     , appHttpManager :: Manager
     , appLogger      :: Logger
+    , environment    :: Environment
     }
 
 data MenuItem = MenuItem
