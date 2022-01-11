@@ -1,0 +1,102 @@
+<div .container>
+  <h1>Prueba Backend
+  <div .bs-docs-section>
+          <div .row>
+              <div .col-lg-12>
+                  <div .page-header>
+                      <h2 #problem><a href="https://github.com/resuelve/prueba-ing-backend">Problema</a>
+
+                      <p>
+                          El sueldo de los jugadores del Resuelve FC se compone de dos partes un sueldo fijo y un bono variable, la suma de estas dos partes es el sueldo de un jugador. El bono variable se compone de dos partes meta de goles individual y meta de goles por equipo cada una tiene un peso de 50%.
+          <div .row>
+              <div .col-lg-12>
+                  <div .page-header>
+                      <h2><a href="https://github.com/cevamenelao">Solucion</a>
+
+                      <p>
+                          La pagina de solucion de este problema se encuentra en el github
+                          <a>github</a>
+                          en el archivo
+                          <a>src/Pruenas.hs</a>
+                          de la linea 22 a la 220 y el calculo se encuentra en las lineas 162 a 220
+              <div .col-lg-4>
+                  <p>
+                      Estructura de input en un JSON sgun el problema:
+                  <pre>
+                      <code>
+                          {
+                             "jugadores" : [
+                                {
+                                   "nombre":"Juan Perez",
+                                   "nivel":"C",
+                                   "goles":10,
+                                   "sueldo":50000,
+                                   "bono":25000,
+                                   "sueldo_completo":null,
+                                   "equipo":"rojo"
+                                },
+                                ...
+                              ]
+                          }
+              <div .col-lg-4>
+                  <p>
+                      Estructura de input opcional de goles minimos segun por equipo en un JSON:
+                  <pre>
+                      <code>
+                          {
+                              "teams_goals" : [
+                                  {
+                                    "team_name" : "rojo",
+                                    "goals" :  [
+                                       {
+                                          "level" : "A",
+                                          "goals_month" : 30
+                                       },
+                                       ...
+                                    ]
+                                  },
+                                  ...
+                                  ]
+                          }
+              <div .col-lg-4>
+                  <p>
+                      El resultado final cambia el valor de la etiqueta sueldo_completo por el cálculo, tambien se modifica de forma local en result.json:
+                  <pre>
+                      <code>
+                          {
+                             "jugadores" : [
+                                {
+                                   "nombre":"Juan Perez",
+                                   "nivel":"C",
+                                   "goles":10,
+                                   "sueldo":50000,
+                                   "bono":25000,
+                                   "sueldo_completo":67833.336,
+                                   "equipo":"rojo"
+                                },
+                                ...
+                              ]
+                          }
+          <div .row>
+              <div .col-lg-6>
+                  <div .bs-callout bs-callout-info well>
+                      <form .form-horizontal method=post action=@{PruebaBackendR}#problem enctype=#{formEnctype}>
+                          ^{formWidget}
+
+                          <button .btn.btn-primary type="submit">
+                              Calcular
+
+
+              <div .col-lg-4.col-lg-offset-1>
+                  <div .bs-callout.bs-callout-info.upload-response>
+                      $maybe result <- resutFullSalary
+                        <h4>Result
+                        <p>#{result}
+                        <button>Descargar
+                      $nothing
+                        <p>Sin resultados aun
+<!--                    $maybe (FilesForm info1 info2) <- submission
+                        Your file type is <em>#{fileContentType info1}</em>. You say it has:
+
+                    $nothing
+                        File upload result will be here...-->

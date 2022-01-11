@@ -1,0 +1,13 @@
+<div .masthead>
+    <div .container>
+        <img src="https://resuelvetudeuda.com/wp-content/themes/rtd-2021/img/logo_resuelvetudeuda.svg">
+        <h1 .header>
+            Prueba Ingeniería Resuelve Backend y Frontend
+        <h2>
+            Prueba tecnica para el puesto de Ingeniero de software de Luis Enrique Aguilar Díaz
+        <h3>
+            Esta pagina fue creada con Yesod - un framework moderno para sitios web ultrarrápidos
+        <a href="/frontend" .btn.btn-info.btn-lg>
+            Prueba Frontend
+        <a href="/backend" .btn.btn-info.btn-lg>
+            Prueba Backend

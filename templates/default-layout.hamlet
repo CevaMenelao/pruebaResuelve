@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="https://resuelvetudeuda.com/wp-content/themes/rtd-2021/img/logo_resuelvetudeuda.svg" width="30" height="30" class="d-inline-block align-top" alt="logo"><!--Resuelve tu deuda-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home
+      <li class="nav-item">
+        <a class="nav-link" href="/frontend">Frontend
+      <li class="nav-item">
+        <a class="nav-link" href="/backend">Backend
+    <ul class="navbar-nav navbar-right">
+      $forall MenuItem label route _ <- navbarRightFilteredMenuItems
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="@{route}">#{label}
+
+
+<!-- Page Contents -->
+
+<div .container>
+    $if not $ Just HomeR == mcurrentRoute
+
+    $maybe msg <- mmsg
+      <div .alert.alert-info #message>#{msg}
+
+^{widget}
+
+<!-- Footer -->
+<footer .footer>
+    <div .container>
+        <p .text-muted>
+            #{appCopyright $ appSettings master}

@@ -1,0 +1,14 @@
+$maybe result <- ghibliResponse
+  <div .header_page>
+    <!--Imagen-->
+    <h1>Ghibli films
+  <div .slider>
+    <div .banners>
+      <a .prev>❮</a>
+      <a .next>❯</a>
+      $forall (banner, id) <- banners
+        <div .banner>
+          <img src=#{movie_banner banner}>
+          <p> #{title banner}
+$nothing
+  <p>Error
